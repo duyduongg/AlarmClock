@@ -13,6 +13,7 @@ export default class AlarmController {
       e.preventDefault();
       this.alarmView.selectPeriodBtn(e.target);
       this.alarmApp.period = e.target.value;
+      console.log("A")
     });
   }
 

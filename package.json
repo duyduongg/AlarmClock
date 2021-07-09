@@ -1,0 +1,33 @@
+{
+  "name": "AlarmClock2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx karma start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "~4.3.4",
+    "karma": "~6.3.4",
+    "karma-chai": "~0.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-firefox-launcher": "~2.1.1",
+    "karma-mocha": "~2.0.1",
+    "mocha": "~9.0.2"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "description": "This simple web application is written using vanilla Javascript (ES6). The application showcases a 12 HR format clock (in en-US). Users are able to set multiple alarms and are alerted when an alarm time is met.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duyduongg/AlarmClock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/duyduongg/AlarmClock/issues"
+  },
+  "homepage": "https://github.com/duyduongg/AlarmClock#readme"
+}
