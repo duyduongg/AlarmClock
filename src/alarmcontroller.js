@@ -13,7 +13,6 @@ export default class AlarmController {
       e.preventDefault();
       this.alarmView.selectPeriodBtn(e.target);
       this.alarmApp.period = e.target.value;
-      console.log("A")
     });
   }
 
@@ -63,7 +62,8 @@ export default class AlarmController {
   // If met, alert and remove
   checkAlarmListener() {
     setInterval(() => {
-      const idx = this.alarmApp.checkAlarms();
+      const time = new Date()
+      const idx = this.alarmApp.checkAlarms(time);
 
       if (idx >= 0) {
         const alarm = this.alarmApp.alarmList[idx];

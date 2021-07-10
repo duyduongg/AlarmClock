@@ -27,8 +27,7 @@ export default class AlarmApp {
     }
   
     // Check if any Alarm has been met
-    checkAlarms() {
-      const time = new Date();
+    checkAlarms(time) {
       const length = this.alarmList.length;
   
       for (let i = 0; i < length; i++) {
