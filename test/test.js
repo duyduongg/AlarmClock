@@ -1,6 +1,7 @@
-import AlarmController from "../src/alarmcontroller.js";
+import AlarmController from "../src/alarmcontroller.js"
 import Alarm from '../src/alarm.js'
-import AlarmApp from "../src/alarmapp.js";
+import AlarmApp from "../src/alarmapp.js"
+
 describe("AlarmClock", function () {
 
     describe('AlarmController', function () {
@@ -28,6 +29,7 @@ describe("AlarmClock", function () {
                 assert.isNaN(alarmControllerInstance.isValid(""))
             })
         })
+
     })
 
     describe('Alarm', function () {
@@ -98,6 +100,17 @@ describe("AlarmClock", function () {
                 const time = new Date(2021, 6, 10, 16, 25, 0)
                 assert.equal(alarmAppInstance.alarmList.indexOf(firstAlarm),
                     alarmAppInstance.checkAlarms(time))
+            })
+        })
+
+        describe('alertAlarm function', function() {
+            let alert
+            this.beforeEach(function() {
+                alert = sinon.spy(alarmAppInstance, 'alertAlarm')
+            })
+            it('should alert alarm', function() {
+                alarmAppInstance.alertAlarm(firstAlarm)
+                expect(alert.calledOnce).to.be.true
             })
         })
 
