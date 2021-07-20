@@ -30,7 +30,29 @@ describe("AlarmClock", function () {
     })
 
     describe('Alarm', function () {
-
+        describe('constructor', function () {
+            it('should create an 24-hour format alarm with valid data (no specical time) - AM time', function () {
+                const alarmInstance = new Alarm(2, 24, "AM")
+            })
+            it('should create an 24-hour format alarm with valid data (no specical time) - PM time', function () {
+                const alarmInstance = new Alarm(2, 24, "PM")
+                assert.equal(14, alarmInstance.time.getHours())
+                assert.equal(24, alarmInstance.time.getMinutes())
+                assert.equal(0, alarmInstance.time.getSeconds())
+            })
+            it('should convert 12:- AM to 00:- (24 hour format', function () {
+                const alarmInstance = new Alarm(12, 12, "AM")
+                assert.equal(0, alarmInstance.time.getHours())
+                assert.equal(12, alarmInstance.time.getMinutes())
+                assert.equal(0, alarmInstance.time.getSeconds())
+            })
+            it('should convert 12:- PM to 12:- (24 hour format', function () {
+                const alarmInstance = new Alarm(12, 12, "PM")
+                assert.equal(12, alarmInstance.time.getHours())
+                assert.equal(12, alarmInstance.time.getMinutes())
+                assert.equal(0, alarmInstance.time.getSeconds())
+            })
+        })
         describe('isValid function', function () {
             it('should return true when all the input is valid', function () {
                 const alarmInstance = new Alarm(2, 24, "AM")
